@@ -141,7 +141,7 @@ module.exports = {
               // TODO: consider separate config for production,
               // e.g. to enable no-console and no-debugger only in production.
               baseConfig: {
-                extends: [require.resolve('eslint-config-react-app')],
+                extends: [require.resolve('@0xaio/eslint-config-react-app')],
               },
               ignore: false,
               useEslintrc: false,
@@ -175,7 +175,7 @@ module.exports = {
             options: {
               // @remove-on-eject-begin
               babelrc: false,
-              presets: [require.resolve('babel-preset-react-app')],
+              presets: [require.resolve('@0xaio/babel-preset-react-app')],
               // @remove-on-eject-end
               compact: true,
               plugins: [require.resolve('babel-plugin-relay')],

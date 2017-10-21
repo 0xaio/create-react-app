@@ -135,7 +135,7 @@ module.exports = {
               eslintPath: require.resolve('eslint'),
               // @remove-on-eject-begin
               baseConfig: {
-                extends: [require.resolve('eslint-config-react-app')],
+                extends: [require.resolve('@0xaio/eslint-config-react-app')],
               },
               ignore: false,
               useEslintrc: false,
@@ -170,7 +170,7 @@ module.exports = {
             options: {
               // @remove-on-eject-begin
               babelrc: false,
-              presets: [require.resolve('babel-preset-react-app')],
+              presets: [require.resolve('@0xaio/babel-preset-react-app')],
               // @remove-on-eject-end
               plugins: [require.resolve('babel-plugin-relay')],
               // This is a feature of `babel-loader` for webpack (not Babel itself).
@@ -198,7 +198,8 @@ module.exports = {
                 loader: require.resolve('postcss-loader'),
                 options: {
                   // Necessary for external CSS imports to work
-                  // https://github.com/facebookincubator/create-react-app/issues/2677ident: 'postcss',
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
                   plugins: () => [
                     require('postcss-flexbugs-fixes'),
                     autoprefixer({

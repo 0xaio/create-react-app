@@ -47,7 +47,7 @@ function exists {
 # Check for accidental dependencies in package.json
 function checkDependencies {
   if ! awk '/"dependencies": {/{y=1;next}/},/{y=0; next}y' package.json | \
-  grep -v -q -E '^\s*"react(-dom|-scripts)?"'; then
+  grep -v -q -E '^\s*"(@0xaio)?/react(-dom|-scripts)?"'; then
    echo "Dependencies are correct"
   else
    echo "There are extraneous dependencies in package.json"
@@ -56,7 +56,7 @@ function checkDependencies {
 }
 
 function create_react_app {
-  node "$temp_cli_path"/node_modules/create-react-app/index.js $*
+  node "$temp_cli_path"/node_modules/@0xaio/create-react-app/index.js $*
 }
 
 # Exit the script with a helpful error message when any error is encountered
@@ -97,6 +97,7 @@ then
   if [ $(npm -v | head -c 1) -eq 5 ]; then
     npm i -g npm@^4.x
   fi;
+  rm -rf ~/.npm/bin/
   npm cache clean || npm cache verify
 fi
 
@@ -137,12 +138,12 @@ npm install "$cli_path"
 # ******************************************************************************
 
 cd "$temp_app_path"
-create_react_app --scripts-version=0.4.0 test-app-version-number
+create_react_app --scripts-version=1.0.11 test-app-version-number
 cd test-app-version-number
 
 # Check corresponding scripts version is installed.
-exists node_modules/react-scripts
-grep '"version": "0.4.0"' node_modules/react-scripts/package.json
+exists node_modules/@0xaio/react-scripts
+grep '"version": "1.0.11"' node_modules/@0xaio/react-scripts/package.json
 checkDependencies
 
 # ******************************************************************************
@@ -150,12 +151,12 @@ checkDependencies
 # ******************************************************************************
 
 cd "$temp_app_path"
-create_react_app --scripts-version=https://registry.npmjs.org/react-scripts/-/react-scripts-0.4.0.tgz test-app-tarball-url
+create_react_app --scripts-version=https://registry.npmjs.org/react-scripts/-/react-scripts-1.0.11.tgz test-app-tarball-url
 cd test-app-tarball-url
 
 # Check corresponding scripts version is installed.
-exists node_modules/react-scripts
-grep '"version": "0.4.0"' node_modules/react-scripts/package.json
+exists node_modules/@0xaio/react-scripts
+grep '"version": "1.0.11"' node_modules/@0xaio/react-scripts/package.json
 checkDependencies
 
 # ******************************************************************************
@@ -167,7 +168,7 @@ create_react_app --scripts-version=react-scripts-fork test-app-fork
 cd test-app-fork
 
 # Check corresponding scripts version is installed.
-exists node_modules/react-scripts-fork
+exists node_modules/@0xaio/react-scripts-fork
 
 # ******************************************************************************
 # Test project folder is deleted on failing package installation
