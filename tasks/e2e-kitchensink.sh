@@ -89,6 +89,7 @@ then
   if [ $(npm -v | head -c 1) -eq 5 ]; then
     npm i -g npm@^4.x
   fi;
+  rm -rf ~/.npm/bin
   npm cache clean || npm cache verify
 fi
 

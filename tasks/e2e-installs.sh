@@ -47,7 +47,7 @@ function exists {
 # Check for accidental dependencies in package.json
 function checkDependencies {
   if ! awk '/"dependencies": {/{y=1;next}/},/{y=0; next}y' package.json | \
-  grep -v -q -E '^\s*"(@0xaio)?/react(-dom|-scripts)?"'; then
+  grep -v -q -E '^\s*"(@0xaio/)?react(-dom|-scripts)?"'; then
    echo "Dependencies are correct"
   else
    echo "There are extraneous dependencies in package.json"
@@ -155,8 +155,8 @@ create_react_app --scripts-version=https://registry.npmjs.org/react-scripts/-/re
 cd test-app-tarball-url
 
 # Check corresponding scripts version is installed.
-exists node_modules/@0xaio/react-scripts
-grep '"version": "1.0.11"' node_modules/@0xaio/react-scripts/package.json
+exists node_modules/react-scripts
+grep '"version": "1.0.11"' node_modules/react-scripts/package.json
 checkDependencies
 
 # ******************************************************************************
@@ -168,7 +168,7 @@ create_react_app --scripts-version=react-scripts-fork test-app-fork
 cd test-app-fork
 
 # Check corresponding scripts version is installed.
-exists node_modules/@0xaio/react-scripts-fork
+exists node_modules/react-scripts-fork
 
 # ******************************************************************************
 # Test project folder is deleted on failing package installation

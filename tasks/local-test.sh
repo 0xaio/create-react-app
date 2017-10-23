@@ -109,6 +109,7 @@ docker run \
   --env NPM_CONFIG_QUIET=true \
   --env USE_YARN=${use_yarn} \
   --tty \
+  --rm \
   --user node \
   --volume ${PWD}/..:/var/create-react-app \
   --workdir /home/node \
