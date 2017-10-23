@@ -1,6 +1,6 @@
 {
   "name": "@0xaio/react-scripts",
-  "version": "1.0.14-4",
+  "version": "1.0.14-5",
   "description": "Configuration and scripts for Create React App.",
   "repository": "facebookincubator/create-react-app",
   "license": "MIT",
@@ -23,7 +23,7 @@
   "dependencies": {
     "@0xaio/babel-preset-react-app": "^3.0.3",
     "@0xaio/eslint-config-react-app": "^2.0.1",
-    "@0xaio/react-dev-utils": "^4.1.0-5",
+    "@0xaio/react-dev-utils": "^4.1.0-6",
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",

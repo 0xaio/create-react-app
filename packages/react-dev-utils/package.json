@@ -1,6 +1,6 @@
 {
   "name": "@0xaio/react-dev-utils",
-  "version": "4.1.0-5",
+  "version": "4.1.0-6",
   "description": "Webpack utilities used by Create React App",
   "repository": "facebookincubator/create-react-app",
   "license": "MIT",
@@ -35,7 +35,7 @@
     "webpackHotDevClient.js"
   ],
   "dependencies": {
-    "@0xaio/react-error-overlay": "^2.0.2-4",
+    "@0xaio/react-error-overlay": "^2.0.2-5",
     "address": "1.0.2",
     "babel-code-frame": "6.22.0",
     "chalk": "1.1.3",
