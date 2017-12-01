@@ -10,7 +10,7 @@
 
 const errorOverlayMiddleware = require('@0xaio/react-dev-utils/errorOverlayMiddleware');
 const noopServiceWorkerMiddleware = require('@0xaio/react-dev-utils/noopServiceWorkerMiddleware');
-const ignoredFiles = require('react-dev-utils/ignoredFiles');
+const ignoredFiles = require('@0xaio/react-dev-utils/ignoredFiles');
 const config = require('./webpack.config.dev');
 const paths = require('./paths');
 
